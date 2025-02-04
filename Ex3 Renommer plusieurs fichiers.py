@@ -25,7 +25,7 @@ for lit in os.listdir():
 for lit in os.listdir():
     titre,cours,numero = lit.split("_")
     place1 = numero.split("#")
-    print(titre.strip(),numero.strip() and place1[1].zfill(6))
-
+    Nouveau_nom =f"{titre.strip()} {numero.strip()}  {place1[1].zfill(6)}"
+    os.rename(lit,Nouveau_nom)
 
 
