@@ -24,8 +24,8 @@ for lit in os.listdir():
 
 for lit in os.listdir():
     titre,cours,numero = lit.split("_")
-    print(titre.strip(),numero.strip())
-    print(numero.zfill(7))
+    place1 = numero.split("#")
+    print(titre.strip(),numero.strip() and place1[1].zfill(6))
 
 
 
