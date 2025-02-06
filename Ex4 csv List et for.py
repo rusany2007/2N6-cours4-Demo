@@ -12,10 +12,8 @@ import csv
 with open ('csvs\\Ex4 Emplois Reseautique.csv' ,'r',encoding="utf-8") as csv_file:
     csv_reader = csv.reader(csv_file)
     next(csv_reader)
-    for line in csv_reader:
-        if line == "Dec" or "Non déterminé":
-            print (line)
-
+for line in csv_reader:
+    print (line)
 # Regardez le contenu du fichier "Ex4 Emplois Reseautique.csv"
 #          Observez que dans ce fichier, la première ligne comprends les en-têtes de colonne 
 #                   Poste;Compagnie;Ville;Expérience;Diplôme;Salaire
