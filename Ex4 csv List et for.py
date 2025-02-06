@@ -9,11 +9,14 @@ import csv
 
 # Nous avons des offres de stages and le fichier "Ex4 Emplois Reseautique.csv"
 # Faites un petit script qui ouvre le fichier csv en mode lecture et qui affiche uniquement les offres ou la demande de Diplôme a la valeur 'Dec' ou 'Non déterminé'
-with open ('csvs\\Ex4 Emplois Reseautique.csv' ,'r',encoding="utf-8") as csv_file:
-    csv_reader = csv.reader(csv_file)
+with open ('csvs\\Ex4 Emplois Reseautique.csv' ,'r',encoding="utf-8") as file:
+    csv_reader = csv.reader(file, delimiter=";")
     next(csv_reader)
-for line in csv_reader:
-    print (line)
+    for line in csv_reader:
+        index = line.copy()
+        lines = line[4]
+        if lines == "Dec" or lines == "Non déterminé":
+         print (index)
 # Regardez le contenu du fichier "Ex4 Emplois Reseautique.csv"
 #          Observez que dans ce fichier, la première ligne comprends les en-têtes de colonne 
 #                   Poste;Compagnie;Ville;Expérience;Diplôme;Salaire
