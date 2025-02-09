@@ -16,6 +16,15 @@ import csv
 # 
 #          Aucune instruction détaillée n'est donnée plus bas
 
-
+with open("csvs\\Ex7 Lan Party.csv","r",encoding="utf-8") as file:
+    reader = csv.reader(file,delimiter=";")
+    next(reader)
+    for line in reader:
+        lines = line.copy()
+        top1 = line[1] 
+        top2 = line[2]
+        top3 = line[3]
+        if top2=="Valorant" or top3=="Valorant" or top1=="Valorant":
+            print (line)
 
 
