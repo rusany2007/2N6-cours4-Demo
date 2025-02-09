@@ -17,7 +17,14 @@ import csv
 #  Des instructions détaillées sont données plus bas
 
 
-
+with open("csvs\\Ex6 Competences.csv","r",encoding="utf-8") as file:
+    reader = csv.reader(file,delimiter="/")
+    next(reader)
+    for line in reader:
+        lines = line.copy()
+        index = lines[2]
+        if index=="Exigé":
+            print(lines)
 
 
 
