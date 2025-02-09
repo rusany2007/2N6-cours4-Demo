@@ -2,12 +2,19 @@ import os                             # N'enlevez pas ces lignes.
 os.chdir(os.path.dirname(__file__))   # Elles permettent de se positionner dans le répertoire de ce script
 
 # Importez csv
-
+import csv
 
 # Dans le fichier "Ex5 Stages.csv", vous avez une liste de stages en programmation et en TI
 # Vous voulez extraire les stages de TI et les mettres dans un nouveau fichier spécifique aux stages de TI
 
- 
+with open("csvs\\Ex5 Stages.csv","r",encoding="utf-8") as csv_file :
+    reader = csv.reader(csv_file,delimiter="|")
+    next(reader)
+    for line in reader:
+        lines = line.copy()
+        index = lines[2]
+        if index == "TI":
+          print(lines)
 
 # Regardez le contenu du fichier "Ex5 Stages.csv"
 # 
@@ -19,6 +26,12 @@ os.chdir(os.path.dirname(__file__))   # Elles permettent de se positionner dans 
 # 
 #  Si vous êtes à l'aise en programmation allez-y
 #  Des instructions détaillées sont données plus bas
+Csv = "Ex5_Stages TI.csv"
+with open ("Ex5 Stages TI.csv","w",encoding="utf-8",newline="") as files :
+ csv_writer = csv.writer(files,delimiter=";")
+ csv_writer.writerow(["Voie de sortie"])
+ for linge in line:
+    csv_writer.writerows(linge)
 
 
 ficher_a_lire = os.path.join("csvs", "Ex5 Stages.csv")
