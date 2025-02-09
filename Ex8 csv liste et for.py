@@ -17,9 +17,23 @@ os.chdir(os.path.dirname(__file__))   # Elles permettent de se positionner dans 
 
 
 #         Si besoin, des instructions détaillées sont données plus bas
+import csv
 
+Csv = "Liste_jeux"
 
+with open("csvs\\Ex7 Lan Party.csv","r",encoding="utf-8") as file:
+    reader = csv.reader(file,delimiter=";")
+    next(reader)
+    for line in reader:
+        lines = line.copy()
+        top1 = line[1] 
+        top2 = line[2]
+        top3 = line[3]
 
+        with open ("Liste_jeux.list","w",encoding="utf-8",newline="") as files :
+            csv_writer = csv.writer(files,delimiter="\n")
+            for linge in line:
+               csv_writer.writerows(linge)
 
 
 
